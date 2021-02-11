@@ -100,7 +100,7 @@ view: vw_masterdata {
 
   dimension: quarter {
     type: number
-    sql: ${TABLE}."QUARTER" ;;
+    sql: Q||'-'||${TABLE}."QUARTER"   ;;
   }
 
   dimension: revenue_product_type {
