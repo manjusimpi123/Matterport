@@ -100,8 +100,22 @@ view: vw_masterdata {
 
   dimension: quarter {
     type: number
-    sql: Q||'-'||${TABLE}."QUARTER"   ;;
+    sql:${TABLE}."QUARTER"   ;;
   }
+
+  dimension: fiscal_quarter {
+    type: string
+    sql:
+    CASE
+    WHEN ${TABLE}."QUARTER" in (1) then 'Q1'
+    WHEN ${TABLE}."QUARTER" in (2) then 'Q2'
+    WHEN ${TABLE}."QUARTER" in (3) then 'Q3'
+    WHEN ${TABLE}."QUARTER" in (4) then 'Q4'
+    ELSE
+    NULL
+    END ;;
+  }
+
 
   dimension: revenue_product_type {
     type: string
