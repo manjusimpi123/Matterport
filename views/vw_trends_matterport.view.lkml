@@ -9,7 +9,7 @@ view: vw_trends_matterport {
 
   measure: sum_churned {
     type: sum
-    sql: ${TABLE}."CHURNED" ;;
+    sql: ${TABLE}."CHURNED" * 1000;;
   }
 
   dimension: downgrade {
@@ -19,7 +19,7 @@ view: vw_trends_matterport {
 
   measure: sum_downgrade {
     type: sum
-    sql: ${TABLE}."DOWNGRADE" ;;
+    sql: ${TABLE}."DOWNGRADE" *1000 ;;
   }
 
   dimension: new_logo {
@@ -29,7 +29,7 @@ view: vw_trends_matterport {
 
   measure: sum_new_logo {
     type: sum
-    sql: ${TABLE}."NEW_LOGO" ;;
+    sql: ${TABLE}."NEW_LOGO" * 1000 ;;
   }
 
   dimension: quarter {
@@ -44,7 +44,7 @@ view: vw_trends_matterport {
 
   measure: sum_upgrade {
     type: sum
-    sql: ${TABLE}."UPGRADE" ;;
+    sql: ${TABLE}."UPGRADE" * 1000 ;;
   }
 
   dimension: year {
