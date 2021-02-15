@@ -131,6 +131,10 @@ view: vw_masterdata {
     type: number
     sql: ${TABLE}."SUM_OF_USD_AMT" ;;
   }
+  measure: sum_of_usd_amt_M {
+    type: sum
+    sql: ${TABLE}."SUM_OF_USD_AMT" ;;
+  }
 
   dimension: vertical {
     type: string
@@ -140,7 +144,7 @@ view: vw_masterdata {
   dimension: vertical_2 {
     type: string
     sql: ${TABLE}."VERTICAL_2" ;;
-    drill_fields: [sum_of_usd_amt]
+    drill_fields: [sum_of_usd_amt_M]
   }
 
   dimension: vertical_3 {
