@@ -140,6 +140,7 @@ view: vw_masterdata {
   dimension: vertical_2 {
     type: string
     sql: ${TABLE}."VERTICAL_2" ;;
+    drill_fields: [sum_of_usd_amt]
   }
 
   dimension: vertical_3 {
